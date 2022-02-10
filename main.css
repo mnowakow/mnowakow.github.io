@@ -7,9 +7,10 @@
 .dropdown button{
     height: 100%;
 }
-.vse-container{    
+.vse-container{ 
+    float:left;   
     position: absolute;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background: white;
     overflow: scroll;
@@ -483,8 +484,7 @@ text{
     stroke: black;
     stroke-width: 1px;
 }
-.vse-container{
-    top: 5%;
-}
+
+
 
 
