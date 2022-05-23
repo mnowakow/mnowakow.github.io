@@ -82,7 +82,7 @@ text{
     filter: drop-shadow(5px 16px 15px black)
 }
 
-.note, .note *, .staff, .measure, .manipulator, .slur, .tie *{
+.note, .note *, .rest, .rest *, .staff, .measure, .manipulator, .slur, .tie *{
     cursor: pointer !important; 
 }
 
@@ -244,7 +244,7 @@ text{
 #sidebarContainer{
     position: absolute;
     left: 0;
-    z-index: 1;
+    /*z-index: 1;*/
     top: 0;
     height: 100%;
     border-color: black;
@@ -254,7 +254,9 @@ text{
     transition: 0.5s;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    overflow:visible;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
 }
 
 #sidebarContainer a{
@@ -289,11 +291,9 @@ text{
 }
 
 #sidebarList{
-    position: absolute;
+    position: relative;
     overflow: scroll;
     width: 100%;
-    height: fit-content;
-    z-index: 1;
 }
 
 .dropKey, .dropClef, .dropTime, .dropTempo{
@@ -302,18 +302,16 @@ text{
 }
 
 #annotList{
-    height: 50%;
     width: 100%;
-    position: absolute;
-    top: 50%;
+    position: relative;
     background-color: white;
     border-top-color: black;
     border-left-color: white;
     border-right-color: white;
     border-bottom-color: white;
     border-style: double;
-    z-index: 2;
     overflow: scroll;
+    order: 2;
 }
 
 #annotList > a{
