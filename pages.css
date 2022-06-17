@@ -7,6 +7,5 @@
 @font-face {
     font-family: "BravuraText";
     src: url(./assets/fonts/BravuraText.otf) format("opentype") local("BravuraText"),
-        url(./assets/fonts/BravuraText.woff) format("woff") local("BravuraText"),
-
+        url(./assets/fonts/BravuraText.woff) format("woff") local("BravuraText");
 }
