@@ -1,9 +1,9 @@
 @font-face {
     font-family: "Bravura";
-    src: url(/./assets/fonts/Bravura.otf) format("opentype") !important;
+    src: url(./assets/fonts/Bravura.otf), format("opentype");
 }
 
 @font-face {
     font-family: "BravuraText";
-    src: url(/./assets/fonts/BravuraText.otf) format("opentype") !important;
+    src: url(./assets/fonts/BravuraText.otf), format("opentype");
 }
