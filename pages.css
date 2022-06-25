@@ -1,11 +1,9 @@
 @font-face {
     font-family: "Bravura";
-    src: url(./assets/fonts/Bravura.otf) format("opentype") local("Bravura"),
-        url(./assets/fonts/Bravura.woff) format("woff") local("Bravura");
+    src: url(./assets/fonts/Bravura.woff) format("woff") local("Bravura");
 }
 
 @font-face {
     font-family: "BravuraText";
-    src: url(./assets/fonts/BravuraText.otf) format("opentype") local("BravuraText"),
-        url(./assets/fonts/BravuraText.woff) format("woff") local("BravuraText")
+    src: url(./assets/fonts/BravuraText.woff) format("woff") local("BravuraText");
 }
