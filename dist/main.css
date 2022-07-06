@@ -385,6 +385,10 @@ text{
     fill: red
 }
 
+.lastAdded{
+    fill: crimson
+}
+
 .playing{
     fill: red
 }
