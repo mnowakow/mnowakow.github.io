@@ -511,6 +511,20 @@ text{
     stroke: black;
     stroke-width: 1px;
 }
+
+
+/*Disable interaction*/
+
+#ff_warning{
+    background: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    font-size: xx-large;
+    color:crimson;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 .vse-container{
     top: 5%;
 }

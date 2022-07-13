@@ -1,9 +1,9 @@
 @font-face {
     font-family: "Bravura";
-    src: url(./assets/fonts/Bravura.woff) format("woff") local("Bravura");
+    src: url(../assets/fonts/Bravura.woff) format("woff");
 }
 
 @font-face {
     font-family: "BravuraText";
-    src: url(./assets/fonts/BravuraText.woff) format("woff") local("BravuraText");
+    src: url(../assets/fonts/BravuraText.woff) format("woff");
 }
