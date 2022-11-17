@@ -14,6 +14,10 @@
     src: url(a8d231cc41945a1476065d741b403cfb.otf), format("opentype");
 }
 
+/* *{
+    font-size: small;
+} */
+
 .dropdown button{
     height: 100%;
 }
@@ -27,16 +31,20 @@
 }
 
 body.waiting * {
-    cursor:wait !important;
+    cursor: wait !important;
 }
-
+/* 
 .textmode  * {
     cursor: text;
-}
+} */
 
 
 #scoreRects > :is(.notehead, .clef, .meterSig, .keySig, .rest, .harm, .manipulator, .slur, .tie):hover{
     cursor: pointer;
+}
+
+#scoreRects .notehead:hover{
+    cursor: ns-resize !important;
 }
 
 .clickmode{
@@ -58,6 +66,16 @@ body.waiting * {
     z-index: 100;
 }
 
+/* This one is for Debugging. 
+Change fill-opacity and stroke-opacity to display boundsing boxes*/
+.debug #scoreRects *, #scoreRects .moving{
+    stroke-width: 1px;
+    stroke: black;
+    fill: gray;
+    fill-opacity: 0.1;
+    stroke-opacity: 1;
+}
+
 #scoreRects *{
     stroke-width: 1px;
     stroke: black;
@@ -65,6 +83,7 @@ body.waiting * {
     fill-opacity: 0;
     stroke-opacity: 0;
 }
+
 
 text{
     cursor: text;
@@ -113,7 +132,7 @@ text{
 
 .smufl{
     font-family: "BravuraText";
-    font-size: xx-large !important;
+    font-size: xx-large;
 }
 
 #playBtn{
@@ -136,15 +155,31 @@ text{
     background-position-x: center;
     background-position-y: center;
     outline: none;
-    background-size: 20% contain;
     font-family: Bravura;
+    font-size: small;
 }
 
-.btn:hover, .btn.selected {
+.btn-group-sm{
+    display: flex;
+}
+
+/* .btn:hover, .btn.selected {
     filter: invert();
     color: black;
     background-color: white;
-}
+} */
+
+.btn:hover{ 
+   background-color: lightgray;
+   color: #ffffff;
+   
+ }
+ 
+ .btn.selected {
+   background-color: black;
+   color: #ffffff;
+   
+ }
 
 #btnToolbar{
     top: 0px;
@@ -176,9 +211,18 @@ text{
     display: none;
 }
 
+#insertToggleDiv{
+    display: none;
+}
+
 #fileSelectGroup{
-  position: absolute;
-  right: 0;
+  align-self: flex-end;
+  margin-left: auto;
+  display:flex
+}
+
+#handlerGroup{
+    display: none
 }
 
 #importFile{
@@ -188,7 +232,6 @@ text{
 #sidebarContainer{
     position: absolute;
     left: 0;
-    /*z-index: 1;*/
     top: 0;
     height: 100%;
     border-color: black;
@@ -208,9 +251,9 @@ text{
     padding-left: 10px;
 }
 
-#sidebarContainer *{
+/* #sidebarContainer *{
     font-size: 10pt;
-}
+} */
 
 #sidebarContainer.closedSidebar{
     visibility: hidden;
@@ -219,12 +262,14 @@ text{
 
 #sidebarContainer.openSidebar{
     visibility: visible;
-    width: 20%;
+    width: 10%;
 }
 
 #sidebarContainer.openSidebar ~ div {
-    margin-left: 20%;
-    width: 80%;
+    margin-left: 10%;
+    width: 90%;
+    flex-wrap: wrap;
+    display: flex;
     transition: 0.5s;
 }
 
@@ -243,6 +288,10 @@ text{
 .dropKey, .dropClef, .dropTime, .dropTempo{
     fill: orange;
     color: orange;
+}
+
+#timeDiv{
+    cursor:pointer !important;
 }
 
 #annotList{
@@ -268,6 +317,10 @@ text{
     display: block;
 }
 
+#btnToolbar{
+    display: flex;
+}
+
 .btn-toolbar:not(:empty){
     border-style: outset;
 }
@@ -276,15 +329,15 @@ text{
 * ANNOTATIONS
 */
 
-
+/* 
 #annotationCanvas.back *{
    opacity: 0.5;
-}
+}*/
 
 #annotationCanvas.front *{
     opacity: 1;
- }
- 
+}
+
 .annotLinkedText .annotFO{
     background-color: rgba(255, 255, 153, 0.8);
     border-radius: 0px 10px 10px 10px;
@@ -370,6 +423,7 @@ text{
     border-style: dashed;
 }
 
+
 [contentEditable=false]:empty:not(:focus):before{
     content:attr(data-text);
     color: lightgray;
@@ -386,13 +440,13 @@ text{
     outline-style: none;
 }
 
-.marked{
+.marked, .lastAdded{
     fill: red
 }
 
-.lastAdded{
+/* .lastAdded{
     fill: rgb(16, 100, 16)
-}
+} */
 
 .playing{
     fill: red
@@ -421,15 +475,19 @@ text{
     fill-opacity: 0.4;
 }
 
+/* #manipulatorCanvas > #cursor{
+    display: none
+} */
+
 /* CLICK MODE */
 
-/*
-#phantomNote{
-    transform: skew(-20deg);
-}
-*/
 
-.phantomLine{
+/* #phantomNote{
+    transform: skew(-20deg);
+} */
+
+
+.phantomLine, .phantomMarker{
     stroke-width: 2px;
     stroke:black;
     opacity: 0.5;
@@ -475,46 +533,22 @@ text{
     filter: invert();
 }
 
-.tooltiptext{
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 200;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    transition: opacity 0.3s;
-  }
 
-.tooltiptext.hide{
-    visibility: hidden;
-    opacity: 0;
-}
-  
-.tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-  
-.tooltiptext.show{
-    visibility: visible;
+.tooltip.show{
+    display: inline-block;
+    background: skyblue;
+    color: #643045;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    border-color: maroon;
+    display: block;
     opacity: 1;
-}
+  }
 
-.debug{
-    fill: firebrick;
-    stroke: black;
-    stroke-width: 1px;
+.tooltip.hide{
+    display: none
 }
 
 
@@ -529,6 +563,10 @@ text{
     font-size: xx-large;
     color:crimson;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#pauseNote{
+    display: none;
 }
 .vse-container{
     top: 5%;
