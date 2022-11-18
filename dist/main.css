@@ -18,6 +18,10 @@
     font-size: small;
 } */
 
+#melismaTabBtn{
+    display: none !important;
+}
+
 .dropdown button{
     height: 100%;
 }
