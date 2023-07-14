@@ -46,7 +46,7 @@ body.waiting * {
 } */
 
 
-#scoreRects > :is(.notehead, .clef, .meterSig, .keySig, .rest, .harm, .manipulator, .slur, .tie):hover{
+#scoreRects > :is(.notehead, .clef, .meterSig, .keySig, .rest, .harm, .manipulator, .slur, .tie, .tupletNum, .tupletBracket):hover{
     cursor: pointer;
 }
 
@@ -67,8 +67,10 @@ body.waiting * {
     flex-direction: column;
 }
 
-#vrvSVG > svg{
-   outline: 1px dashed #000; /* Adjust the color and width as needed */
+#vrvSVG .systemLine{
+    stroke: black;
+    stroke-dasharray: 10rem;
+    stroke-width: 1rem;
 }
 
 #interactionOverlay{
@@ -137,6 +139,7 @@ text{
     background-position-x: 10%;
 }
 
+
 #insertMode{
     background-color: white;
     color: black;
@@ -145,6 +148,10 @@ text{
 .smufl{
     font-family: "BravuraText";
     font-size: xx-large;
+}
+
+.harm *{
+    font-family: "BravuraText";
 }
 
 #playBtn{
@@ -172,6 +179,12 @@ text{
     background-size: 80%;
 }
 
+#tupletBtn{
+    background-image: url(3a5e701de21cfa3d5d69b49390768c90.svg);
+    background-size: 80%;
+    color: rgba(0, 0, 0, 0.0)
+}
+
 .btn{
     background-repeat: no-repeat;
     background-position-x: center;
@@ -179,6 +192,10 @@ text{
     outline: none;
     font-family: Bravura;
     font-size: small;
+}
+
+.articulationGroup .btn{
+    font-size: larger;
 }
 
 .btn-group-sm{
@@ -209,6 +226,10 @@ text{
     /*height: 5%;*/
 }
 
+#customToolbar :first-child{
+ margin-left: 0.25em;
+}
+
 .dropdown-item.selected{
     background-color: antiquewhite;
     font-weight: bold;
@@ -237,7 +258,7 @@ text{
     display: none;
 }
 
-#fileSelectGroup{
+#fileSelectGroup, #midiSelectGroup{
   align-self: flex-end;
   margin-left: auto;
   display:flex
@@ -559,7 +580,7 @@ text{
 
 
 .tooltip.show{
-    display: inline-block;
+    display:contents;
     background: skyblue;
     color: #643045;
     font-weight: bold;
@@ -569,7 +590,12 @@ text{
     border-color: maroon;
     display: block;
     opacity: 1;
+    position: absolute;
   }
+
+/* .tooltip{
+    inset:  !important;
+} */
 
 .tooltip.hide{
     display: none
@@ -599,6 +625,14 @@ text{
 
 #interactionOverlay, #vrvSVG > svg{
     transform-origin: top left
+}
+
+.indexBase{
+    font-size: 0.7em;
+}
+
+foreignObject > [contenteditable]{
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 .vse-container{
     top: 5%;

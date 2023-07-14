@@ -8,8 +8,8 @@
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style>
           <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">VerovioScoreEditor Demo</span>
-            <span class="fs-4" style="color: red">&nbsp; v. 1.3.5</span>
+            <span class="fs-4">VerovioScoreEditor Demo (a.k.a. <b>VIBE</b>: Verovio Interface for Browser-based Editing)</span>
+            <span class="fs-4" style="color: red">&nbsp; v. 1.3.6</span>
           </a>
     
           <ul class="nav nav-pills">
@@ -51,6 +51,17 @@
                 <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                   <div class="d-flex gap-2 w-100 justify-content-between">
                     <div>
+                      <h6 class="mb-0">Keyboard Mapping</h6>
+                      <p class="mb-0 opacity-75">Buttons in the upper toolbar are mapped to the F-Keys (F1-F12) by order. 
+                        Buttons in the second toolbar are mapped to the number keys (1-9, 0) by order.
+                        Alterations can be chosen by Shift + b, Shift + bb, Shift + #, Shift + ## and Shift + n (for neutral).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                  <div class="d-flex gap-2 w-100 justify-content-between">
+                    <div>
                       <h6 class="mb-0">Unselect</h6>
                       <p class="mb-0 opacity-75">Escape</p>
                     </div>
@@ -76,7 +87,15 @@
                     <div class="d-flex gap-2 w-100 justify-content-between">
                       <div>
                         <h6 class="mb-0">Change Harmonies</h6>
-                        <p class="mb-0 opacity-75">Doubleclick</p>
+                        <p class="mb-0 opacity-75">Doubleclick on Harmony</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                      <div>
+                        <h6 class="mb-0">Harmony Syntax</h6>
+                        <p class="mb-0 opacity-75">When creating a harmony annotation use <b>^{}</b> for superscript numbers and <b>_{}</b> for subscript numbers.</p>
                       </div>
                     </div>
                   </div>
@@ -85,6 +104,24 @@
                       <div>
                         <h6 class="mb-0">Selecting Notes</h6>
                         <p class="mb-0 opacity-75">Drag window</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                      <div>
+                        <h6 class="mb-0">MIDI Input Devices</h6>
+                        <p class="mb-0 opacity-75">Devices will be found automatically just choose from the ist in the upper toolbar</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                      <div>
+                        <h6 class="mb-0">Tuplets</h6>
+                        <p class="mb-0 opacity-75">Tuplets are based on the number of elements selected. E.g. 3 elements will make a triple, 5 elements will make a 5-tuple. 
+                          Pauses for the missing durations will be added automatically but will not disappear when the tuple is deleted which may result in overfilled bars.
+                          Adding notes within tuples is not possible as for now. </p>
                       </div>
                     </div>
                   </div>
